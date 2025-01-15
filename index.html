@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <button id="inhalt"> :<p id="inhalt"></p></button>
-    <br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+      <p id="inhalt"></p>
 
+    <!-- Erste Reihe -->
     <button id="eins" value="1" name="1" onclick="takeValue(this.value)">1</button>
-    <button id="zwei" value="2" name="2"  onclick="takeValue(this.value)">2</button>
+    <button id="zwei" value="2" name="2" onclick="takeValue(this.value)">2</button>
     <button id="drei" value="3" name="3" onclick="takeValue(this.value)">3</button>
-    <button  value="*" onclick="arithmetik_Operation(this.value)">*</button>
-    <button  onclick="restart()">C</button>
+    <button onclick="restart()">C</button>
 
-
-    <br>
-    <button id="vier" value="4" name="4"onclick="takeValue(this.value)">4</button>
+    <!-- Zweite Reihe -->
+    <button id="vier" value="4" name="4" onclick="takeValue(this.value)">4</button>
     <button id="fünf" value="5" name="5" onclick="takeValue(this.value)">5</button>
     <button id="sechs" value="6" name="6" onclick="takeValue(this.value)">6</button>
     <button value="-" onclick="arithmetik_Operation(this.value)">-</button>
 
-    <br>
-    <button id="sieben" value="7" name="7"onclick="takeValue(this.value)">7</button>
-    <button id="acht" value="8" name="8"onclick="takeValue(this.value)">8</button>
-    <button  id="neun" value="9" name="9"onclick="takeValue(this.value)">9</button>
-
+    <!-- Dritte Reihe -->
+    <button id="sieben" value="7" name="7" onclick="takeValue(this.value)">7</button>
+    <button id="acht" value="8" name="8" onclick="takeValue(this.value)">8</button>
+    <button id="neun" value="9" name="9" onclick="takeValue(this.value)">9</button>
     <button value="+" onclick="arithmetik_Operation(this.value)">+</button>
-    <br>
-    <button id="werte"> = <p id="out"></p></button>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- Vierte Reihe -->
+    <button id="null" value="0" name="0" onclick="takeValue(this.value)">0</button>
+    <button value="*" onclick="arithmetik_Operation(this.value)">*</button>
+
+    <button value="/" onclick="arithmetik_Operation(this.value)">/</button>
+    <button  onclick="executeOperation()">=</button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

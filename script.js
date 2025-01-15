@@ -3,69 +3,78 @@
 
 function arithmetik_Operation(valu) {
   let operation = valu;
+  if (first === " ") {
+    alert("First chose a number")
+    return;
+  }
   switch (operation) {
     case "+":
-      if(first === 0){
-        alert("First chose a number")
-        break;
-      }
-      myArray[1] = "+"
-      document.getElementById("inhalt").textContent = first  + operation ;
+      myArray = "+"
+      secondNumberTurn = true;
+      document.getElementById("inhalt").textContent = first + " " + operation;
       break;
     case "-":
-      myArray[1] = "-"
-      document.getElementById("inhalt").textContent = first  + operation ;
+      myArray = "-"
+      secondNumberTurn = true;
+      document.getElementById("inhalt").textContent = first + " " +operation;
       break;
     case "*":
-      myArray[1] = "*"
-      document.getElementById("inhalt").textContent = first  + operation ;
+      myArray = "*"
+      secondNumberTurn = true;
+      document.getElementById("inhalt").textContent = first + " " + operation;
+      break;
+    case "/":
+      myArray = "/"
+      secondNumberTurn = true;
+      document.getElementById("inhalt").textContent = first + " " + operation;
       break;
 
-  
+
   }
 }
-   
-let myArray = [];
+
+let myArray = " ";
 
 let first = " ";
 let second = " ";
 let default1 = " ";
+let secondNumberTurn = false;
 
 function takeValue(val) {
-  if(first === default1){
-    myArray[0] = val;
-    first = val;
-    document.getElementById("inhalt").textContent = val;
-    document.getElementById("out").textContent = " ";
-  }
-  else{  
-    second = val;
-    myArray[2] = second
-    document.getElementById("inhalt").textContent = first  + myArray[1] + second ;
-    executeOperation()
+  if (secondNumberTurn) {
+    second = second + val;
+    document.getElementById("inhalt").textContent = first + " " + myArray + second;
+  } else {
+    first = first + val;
+    document.getElementById("inhalt").textContent = first;
   }
 
-    
-  
+
+
 }
 
-function executeOperation(){
-  switch (myArray[1]) {
+function executeOperation() {
+  switch (myArray) {
     case "+":
-      let sum = parseInt(myArray[0]) + parseInt(myArray[2])
-      document.getElementById("out").textContent = sum;
+      let sum = parseInt(first) + parseInt(second)
+      document.getElementById("inhalt").textContent = sum;
       reset();
       break;
 
     case "-":
       let sub = parseInt(first) - parseInt(second)
       reset();
-      document.getElementById("out").textContent = sub;
+      document.getElementById("inhalt").textContent = sub;
       break;
     case "*":
       let mult = parseInt(first) * parseInt(second)
       reset();
-      document.getElementById("out").textContent = mult;
+      document.getElementById("inhalt").textContent = mult;
+      break;
+    case "/":
+      let divi = parseInt(first) / parseInt(second)
+      reset();
+      document.getElementById("inhalt").textContent = divi;
       break;
   }
 
@@ -77,11 +86,14 @@ function reset() {
 
   first = " ";
   second = " ";
+  secondNumberTurn = false;
 }
-function restart(){
-  document.getElementById("out").textContent = " ";
-
-  document.getElementById("inhalt").textContent = " ";
+function restart() {
+  first = " ";
+  second = " ";
+  secondNumberTurn = false;
+  document.getElementById("inhalt").textContent = default1;
+  myArray = " ";
 
 
 }
