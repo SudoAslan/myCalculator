@@ -1,0 +1,10 @@
+#werte{
+    padding-right: 20px;
+    text-align: center;
+    display: flex;
+
+
+}
+#werte p{
+    padding-top: -10px;
+}

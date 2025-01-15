@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    
+    <button id="inhalt"> :<p id="inhalt"></p></button>
+    <br>
+
     <button id="eins" value="1" name="1" onclick="takeValue(this.value)">1</button>
     <button id="zwei" value="2" name="2"  onclick="takeValue(this.value)">2</button>
     <button id="drei" value="3" name="3" onclick="takeValue(this.value)">3</button>
     <button  value="*" onclick="arithmetik_Operation(this.value)">*</button>
+    <button  onclick="restart()">C</button>
+
 
     <br>
     <button id="vier" value="4" name="4"onclick="takeValue(this.value)">4</button>
@@ -25,7 +29,7 @@
 
     <button value="+" onclick="arithmetik_Operation(this.value)">+</button>
     <br>
-    <button> = <p id="out"></p></button>
+    <button id="werte"> = <p id="out"></p></button>
 
     <script src="script.js"></script>
   </body>
